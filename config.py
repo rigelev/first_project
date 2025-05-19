@@ -2,7 +2,6 @@ WIN_WIDTH = 640
 WIN_HEIGHT = 480
 TILESIZE = 32
 FPS = 60
-practice = 99
 
 
 PLAYER_LAYER = 4
@@ -30,7 +29,7 @@ tilemap = [
     'B.....BBB..........B',
     'B.......B..........B',
     'B.......B..........B',
-    'B..................B',
+    'B..........EE......B',
     'B..................B',
     'B..................B',
     'BBBBBBBBBBBBBBBBBBBB',
