@@ -1,7 +1,12 @@
+import os
+os.environ['SDL_VIDEO_CENTERED'] = '1'  # 창을 화면 중앙에 표시
+
 import pygame
 from sprites import *
 from config import *
+from OpeningScene import OpeningScene
 import sys
+
 
 class Game:
     def __init__(self):
@@ -124,12 +129,26 @@ class Game:
             pygame.display.update()
 
 
-g = Game()
-g.intro_screen()
-g.new()
-while g.running:
-    g.main()
-    g.game_over()
+if __name__ == "__main__":
+    # 오프닝 씬 실행
+    if OpeningScene().run():
+        g = Game()
+        g.new()
+        while g.running:
+            g.main()
+            g.game_over()
+        pygame.quit()
+        sys.exit()
+    else:
+        pygame.quit()
+        sys.exit()
 
-pygame.quit()
-sys.exit()
+# g = Game()
+# g.intro_screen()
+# g.new()
+# while g.running:
+#     g.main()
+#     g.game_over()
+
+# pygame.quit()
+# sys.exit()
